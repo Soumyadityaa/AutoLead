@@ -1,0 +1,130 @@
+/* Auth Wrapper to center content and take up remaining space between header and footer */
+.auth-wrapper { 
+    flex: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 3rem 1rem; 
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(0, 180, 216, 0.05) 100%); 
+}
+
+.auth-card { 
+    width: 100%; 
+    max-width: 450px; 
+    background: var(--white); 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
+    border: 1px solid var(--border-color);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-title { 
+    color: var(--primary-blue); 
+    font-size: 1.8rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.auth-subtitle { 
+    color: var(--text-light); 
+    font-size: 1rem; 
+}
+
+/* Tabs */
+.auth-tabs { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 2rem; 
+    border-bottom: 2px solid var(--border-color); 
+}
+
+.tab-btn { 
+    flex: 1; 
+    padding: 0.8rem; 
+    border: none; 
+    background: transparent; 
+    cursor: pointer; 
+    font-weight: 600; 
+    color: var(--text-light); 
+    font-size: 1rem; 
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active { 
+    color: var(--primary-blue); 
+    border-bottom: 3px solid var(--primary-blue); 
+    margin-bottom: -2px; 
+}
+
+/* Form Inputs */
+.form-group { 
+    text-align: left; 
+    margin-bottom: 1.5rem; 
+}
+
+.form-group label { 
+    display: block; 
+    font-weight: 600; 
+    margin-bottom: 0.5rem; 
+    color: var(--text-dark);
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon-wrapper svg {
+    position: absolute;
+    left: 12px;
+    color: var(--text-light);
+}
+
+.form-group input { 
+    width: 100%; 
+    padding: 0.8rem 1rem 0.8rem 2.5rem; 
+    border: 1px solid var(--border-color); 
+    border-radius: 6px; 
+    font-size: 1rem; 
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.form-group input::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* Submit Button */
+.btn-login { 
+    width: 100%; 
+    background-color: var(--primary-blue); 
+    color: #ffffff; 
+    padding: 1rem; 
+    border: none; 
+    border-radius: 6px; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background 0.3s, transform 0.1s; 
+    margin-top: 1rem;
+}
+
+.btn-login:hover { 
+    background-color: var(--primary-blue-hover); 
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}

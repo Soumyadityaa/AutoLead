@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLead - Smart Views</title>
+    <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/employee/smart-views.css">
+</head>
+<body>
+    <header class="top-nav" id="employee-top-nav">
+        <div class="nav-brand">
+            <a href="dashboard.html">
+                <img src="../img/logo.png" alt="AutoLead Logo" class="brand-logo">
+            </a>
+        </div>
+        
+        <!-- Universal Search Bar -->
+        <div class="header-search">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="global-search" placeholder="Search leads, calls, tasks...">
+            </div>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="campaigns.html">Email Campaigns</a>
+            <a href="smart-views.html" class="active">Leads</a>
+            
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="theme-toggle-btn nav-theme-btn" aria-label="Toggle Dark Mode">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                    <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <a href="../index.html" class="logout-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Logout
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content" id="employee-main">
+        <div class="page-header">
+            <h2>Lead Smart Views</h2>
+            <p class="subtitle" style="color: var(--text-light); font-size: 0.95rem;">Quickly filter your assigned leads, prospects, call records, and follow-ups.</p>
+        </div>
+
+        <section class="card interface-card">
+            <!-- Custom Tabbed Navigation -->
+            <div class="smart-tabs-wrapper styled-scrollbar">
+                <div class="smart-tabs">
+                    <button class="smart-tab-btn active" data-target="tab-new">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                        New Leads
+                    </button>
+                    <button class="smart-tab-btn" data-target="tab-prospect">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        Prospects
+                    </button>
+                    <button class="smart-tab-btn" data-target="tab-incoming">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 2 22 2 22 8"></polyline><line x1="22" y1="2" x2="15" y2="9"></line><path d="M10 14L4 20"></path><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Incoming Calls
+                    </button>
+                    <button class="smart-tab-btn" data-target="tab-outgoing">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 16 22 22 16 22"></polyline><line x1="22" y1="22" x2="15" y2="15"></line><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Outgoing Calls
+                    </button>
+                    <button class="smart-tab-btn" data-target="tab-followup">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        Followups
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Tab Contents -->
+            <div class="tab-content-container">
+                
+                <!-- NEW LEADS TAB -->
+                <div class="tab-content active" id="tab-new">
+                    <div class="table-responsive styled-scrollbar">
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Name / Email</th><th>Number</th><th>Calling Feedback Notes</th><th>Source</th><th>Score</th><th>Created On</th><th>Modified On</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="lead-info"><span class="lead-name">Amy Adams</span><span class="lead-email">amy.a@example.com</span></div></td>
+                                    <td><span class="phone-text">+1 555-0198</span></td>
+                                    <td><span class="note-text">Requested info packet</span></td>
+                                    <td><span class="source-tag organic">Website</span></td>
+                                    <td><span class="score-badge high">85</span></td>
+                                    <td><span class="date-text">Oct 26</span></td>
+                                    <td><span class="date-text">Oct 26</span></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="lead-info"><span class="lead-name">Tom Hanks</span><span class="lead-email">tom.h@example.com</span></div></td>
+                                    <td><span class="phone-text">+1 555-4432</span></td>
+                                    <td><span class="note-text">Call back next week</span></td>
+                                    <td><span class="source-tag referral">Referral</span></td>
+                                    <td><span class="score-badge med">60</span></td>
+                                    <td><span class="date-text">Oct 25</span></td>
+                                    <td><span class="date-text text-dark">Oct 26</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- PROSPECTS TAB -->
+                <div class="tab-content" id="tab-prospect">
+                    <div class="table-responsive styled-scrollbar">
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Lead Name</th><th>Lead Score</th><th>Lead Stage</th><th>Owner</th><th>Modification</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="lead-name">Jane Smith</span></td>
+                                    <td><span class="score-badge high">95</span></td>
+                                    <td><span class="status-indicator active">Negotiation</span></td>
+                                    <td><span class="emp-badge">Me</span></td>
+                                    <td><span class="date-text">Today</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="lead-name">Bruce Wayne</span></td>
+                                    <td><span class="score-badge high">90</span></td>
+                                    <td><span class="status-indicator success">Closed Won</span></td>
+                                    <td><span class="emp-badge">Me</span></td>
+                                    <td><span class="date-text">Yesterday</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- INCOMING CALLS TAB -->
+                <div class="tab-content" id="tab-incoming">
+                    <div class="table-responsive styled-scrollbar">
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Lead Name</th><th>Start Time</th><th>Status</th><th>Call Duration</th><th>Call Record URL</th><th>Owner</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="lead-name">Mark Taylor</span></td>
+                                    <td><span class="date-text">Today, 10:00 AM</span></td>
+                                    <td><span class="call-status missed">Missed</span></td>
+                                    <td><span class="duration-text">00:00</span></td>
+                                    <td><span class="text-muted">N/A</span></td>
+                                    <td><span class="emp-badge">Me</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="lead-name">Sarah Connor</span></td>
+                                    <td><span class="date-text">Oct 25, 14:30</span></td>
+                                    <td><span class="call-status connected">Connected</span></td>
+                                    <td><span class="duration-text">04:15</span></td>
+                                    <td>
+                                        <button class="play-record-btn" title="Play Record">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Play
+                                        </button>
+                                    </td>
+                                    <td><span class="emp-badge">Me</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- OUTGOING CALLS TAB -->
+                <div class="tab-content" id="tab-outgoing">
+                    <div class="table-responsive styled-scrollbar">
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Lead Name</th><th>Start Time</th><th>Status</th><th>Call Duration</th><th>Call Record URL</th><th>Owner</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="lead-name">Lisa Wong</span></td>
+                                    <td><span class="date-text">Today, 11:30 AM</span></td>
+                                    <td><span class="call-status connected">Connected</span></td>
+                                    <td><span class="duration-text">05:12</span></td>
+                                    <td>
+                                        <button class="play-record-btn" title="Play Record">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Play
+                                        </button>
+                                    </td>
+                                    <td><span class="emp-badge">Me</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="lead-name">John Doe</span></td>
+                                    <td><span class="date-text">Oct 26, 09:15 AM</span></td>
+                                    <td><span class="call-status unanswered">No Answer</span></td>
+                                    <td><span class="duration-text">00:45</span></td>
+                                    <td>
+                                        <button class="play-record-btn" title="Play Record">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Play
+                                        </button>
+                                    </td>
+                                    <td><span class="emp-badge">Me</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- FOLLOWUPS TAB -->
+                <div class="tab-content" id="tab-followup">
+                    <div class="table-responsive styled-scrollbar">
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Task ID</th><th>Subject</th><th>Status</th><th>Due Date</th><th>Reminder</th><th>Owner</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="task-id">TSK-102</span></td>
+                                    <td><span class="task-subject">Send Pricing Proposal</span></td>
+                                    <td><span class="status-indicator pending">Pending</span></td>
+                                    <td><span class="date-text text-danger">Today</span></td>
+                                    <td><span class="reminder-toggle active">Active</span></td>
+                                    <td><span class="emp-badge">Me</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="task-id">TSK-105</span></td>
+                                    <td><span class="task-subject">Quarterly Check-in Call</span></td>
+                                    <td><span class="status-indicator success">Completed</span></td>
+                                    <td><span class="date-text">Oct 25</span></td>
+                                    <td><span class="reminder-toggle inactive">Off</span></td>
+                                    <td><span class="emp-badge">Me</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom" style="padding: 1rem; text-align: center; font-size: 0.9rem; opacity: 0.8;">
+            <p>&copy; 2026 AutoLead Employee Workspace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/employee/smart-views.js"></script>
+</body>
+</html>

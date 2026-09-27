@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLead - Employee Dashboard</title>
+    <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/employee/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="top-nav" id="employee-top-nav">
+        <div class="nav-brand">
+            <a href="dashboard.html">
+                <img src="../img/logo.png" alt="AutoLead Logo" class="brand-logo">
+            </a>
+        </div>
+        
+        <!-- Universal Search Bar -->
+        <div class="header-search">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="global-search" placeholder="Search leads, tasks, campaigns...">
+            </div>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="dashboard.html" class="active">DASHBOARD</a>
+            <a href="campaigns.html">Email Campaigns</a>
+            <a href="smart-views.html">Leads</a>
+            
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="theme-toggle-btn nav-theme-btn" aria-label="Toggle Dark Mode">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                    <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <a href="../index.html" class="logout-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Logout
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content" id="employee-main">
+        <!-- Dashboard Header & Prominent Action -->
+        <div class="dashboard-header">
+            <div class="header-titles">
+                <h2>My Workspace</h2>
+                <p class="subtitle" style="color: var(--text-light); font-size: 0.95rem;">Manage your active leads, track weekly growth, and complete assigned tasks.</p>
+            </div>
+            <div class="header-actions">
+                <button id="complete-task-btn" class="btn-complete">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    COMPLETE TASK
+                </button>
+            </div>
+        </div>
+
+        <!-- My Lead Growth Chart Section -->
+        <section class="card chart-card">
+            <div class="card-header">
+                <h3>My Lead Growth</h3>
+                <span class="badge badge-primary">Current Month</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="myLeadGrowthChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Summary Tables Grid -->
+        <div class="grid-2-col summary-grid">
+            
+            <!-- My Lead Funnel -->
+            <section class="card mini-table-card">
+                <div class="card-header border-bottom">
+                    <h3>My Lead Funnel</h3>
+                    <a href="smart-views.html" class="view-all-link">View All</a>
+                </div>
+                <div class="table-responsive styled-scrollbar">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Name</th><th>Stage</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="lead-name">Bob Ross</span></td>
+                                <td><span class="status-indicator pending">Contacted</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="lead-name">Diana Prince</span></td>
+                                <td><span class="status-indicator active">Negotiation</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="lead-name">Bruce Wayne</span></td>
+                                <td><span class="status-indicator success">Closed Won</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- My New Leads -->
+            <section class="card mini-table-card">
+                <div class="card-header border-bottom">
+                    <h3>My New Leads</h3>
+                    <a href="smart-views.html" class="view-all-link">View All</a>
+                </div>
+                <div class="table-responsive styled-scrollbar">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Name</th><th>Date Added</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="lead-name">Amy Adams</span></td>
+                                <td><span class="date-text highlight">Today, 09:15 AM</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="lead-name">Tom Hanks</span></td>
+                                <td><span class="date-text">Yesterday</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="lead-name">Emma Stone</span></td>
+                                <td><span class="date-text">Oct 24, 2026</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Recently Assigned Leads -->
+            <section class="card mini-table-card">
+                <div class="card-header border-bottom">
+                    <h3>Recently Assigned</h3>
+                    <a href="smart-views.html" class="view-all-link">View All</a>
+                </div>
+                <div class="table-responsive styled-scrollbar">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Name</th><th>Source</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="lead-name">Clark Kent</span></td>
+                                <td><span class="source-tag referral">Referral</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="lead-name">Barry Allen</span></td>
+                                <td><span class="source-tag organic">Website</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="lead-name">Arthur Curry</span></td>
+                                <td><span class="source-tag social">Social</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Overdue Tasks -->
+            <section class="card mini-table-card warning-card">
+                <div class="card-header border-bottom">
+                    <h3 class="text-danger">Overdue Tasks</h3>
+                    <span class="badge badge-danger">2 Critical</span>
+                </div>
+                <div class="table-responsive styled-scrollbar">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Task</th><th>Due Date</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="task-name">Call Bob</span></td>
+                                <td><span class="date-text text-danger">Yesterday</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="task-name">Send Proposal to Diana</span></td>
+                                <td><span class="date-text text-danger">Oct 22, 2026</span></td>
+                            </tr>
+                            <tr class="empty-row-placeholder">
+                                <td colspan="2"><span class="text-muted">No further overdue tasks.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom" style="padding: 1rem; text-align: center; font-size: 0.9rem; opacity: 0.8;">
+            <p>&copy; 2026 AutoLead Employee Workspace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/employee/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+:root {
+    /* Persistent Core Brand Colors (Do not change in dark mode) */
+    --primary-blue: #00b4d8;
+    --primary-blue-hover: #0096c7;
+    --accent-purple: #90e0ef;
+    --dark-purple: #03045e;
+    --success-green: #28a745;
+    --danger-red: #dc3545;
+    
+    /* Dynamic Theme Variables (Light Mode Default) */
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --text-dark: #2b2d42;
+    --text-light: #6c757d;
+    --border-color: #e9ecef;
+    
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dark Mode Overrides (Only inverts backgrounds, texts, and borders) */
+[data-theme="dark"] {
+    --bg-light: #121212;
+    --white: #1e1e1e;
+    --text-dark: #f8f9fa;
+    --text-light: #adb5bd;
+    --border-color: #333333;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-family); background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; transition: background-color 0.3s, color 0.3s; }
+a { text-decoration: none; color: inherit; }
+
+/* Global Brand Logo */
+.brand-logo { max-height: 45px; width: auto; vertical-align: middle; }
+[data-theme="dark"] .brand-logo { filter: brightness(0) invert(1); } /* Ensure logo is visible on dark nav */
+
+/* Top Navigation */
+.top-nav { background-color: var(--white); display: flex; justify-content: space-between; align-items: center; padding: 1rem 2.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--primary-blue); transition: background-color 0.3s; }
+.nav-brand { display: flex; align-items: center; }
+.nav-actions { display: flex; align-items: center; }
+.nav-links { display: flex; gap: 1.75rem; align-items: center; }
+.nav-links a, .dropbtn { font-size: 1rem; color: var(--text-dark); font-weight: 500; cursor: pointer; background: none; border: none; transition: color 0.2s; }
+.nav-links a.active, .nav-links a:hover { color: var(--primary-blue); }
+.mobile-menu-toggle { display: none; background: var(--dark-purple); color: var(--white); border: none; padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; }
+
+/* Theme Toggle Button */
+.theme-toggle-btn { background: transparent; border: 1px solid var(--border-color); color: var(--text-dark); padding: 0.5rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; margin-right: 1.5rem; transition: all 0.3s; }
+.theme-toggle-btn:hover { background: var(--bg-light); }
+[data-theme="dark"] .moon-icon { display: none; }
+[data-theme="dark"] .sun-icon { display: block !important; }
+
+/* Buttons */
+.btn-primary { background-color: var(--primary-blue); color: var(--white); padding: 0.6rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; display: inline-flex; align-items: center; gap: 0.5rem; transition: background-color 0.3s; }
+.btn-primary:hover { background-color: var(--primary-blue-hover); color: var(--white); }
+.logout-link:hover { color: var(--danger-red) !important;  }
+
+
+/* Landing Page Specifics */
+.landing-body { background-color: var(--white); }
+.landing-main { flex: 1; }
+.hero-section { background: linear-gradient(135deg, var(--dark-purple) 0%, var(--primary-blue) 100%); color: #ffffff; text-align: center; padding: 6rem 2rem; }
+.hero-content { max-width: 800px; margin: 0 auto; }
+.hero-content h1 { font-size: 3rem; margin-bottom: 1.5rem; line-height: 1.2; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9; }
+.hero-btn { font-size: 1.1rem; padding: 0.8rem 2rem; background-color: #ffffff; color: var(--dark-purple); }
+.hero-btn:hover { background-color: #f8f9fa; color: var(--dark-purple); }
+
+.features-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 5rem 2.5rem; max-width: 1400px; margin: 0 auto; }
+.feature-card { background: var(--white); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 1px solid var(--border-color); transition: transform 0.3s, background-color 0.3s; }
+.feature-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+.feature-icon { background: var(--bg-light); color: var(--primary-blue); width: 70px; height: 70px; margin: 0 auto 1.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.feature-card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.3rem; }
+.feature-card p { color: var(--text-light); }
+
+/* Standard Page Footer */
+.site-footer { background-color: var(--dark-purple); color: #f8f9fa; margin-top: auto; }
+.footer-container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; max-width: 1400px; margin: 0 auto; padding: 4rem 2.5rem; }
+.footer-logo { max-height: 40px; filter: brightness(0) invert(1); margin-bottom: 1rem; }
+.footer-brand-col p { opacity: 0.7; max-width: 300px; }
+.footer-links-col h4 { color: #ffffff; margin-bottom: 1.2rem; font-size: 1.1rem; }
+.footer-links-col a { display: block; color: var(--accent-purple); margin-bottom: 0.8rem; opacity: 0.8; transition: opacity 0.2s; }
+.footer-links-col a:hover { opacity: 1; text-decoration: underline; }
+.footer-bottom { text-align: center; padding: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.7; }
+
+/* Mobile Queries */
+@media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); padding: 1rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 1px solid var(--border-color); }
+    .nav-links.show { display: flex; }
+    .mobile-menu-toggle { display: block; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .footer-container { grid-template-columns: 1fr; }
+}

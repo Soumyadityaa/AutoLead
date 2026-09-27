@@ -1,0 +1,179 @@
+/* ========================================================
+   GLOBAL LAYOUT FIXES (Strict Boundaries)
+   ======================================================== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#admin-main {
+    padding: 2rem 3%; 
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#admin-top-nav {
+    padding: 1rem 3%;
+    box-sizing: border-box;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+}
+.page-header h2 { color: var(--text-dark); margin-bottom: 0.5rem; font-size: 1.8rem; }
+
+/* ========================================================
+   MOBILE MENU TOGGLE
+   ======================================================== */
+.mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #03045e !important; 
+    color: #ffffff !important;
+    border: 1px solid transparent !important;
+    padding: 0.5rem !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .mobile-menu-toggle {
+    background-color: #000414 !important; 
+    border: 1px solid rgba(255, 255, 255, 0.4) !important; 
+}
+
+/* ========================================================
+   CARDS & GRIDS
+   ======================================================== */
+.card {
+    padding: 1.5rem !important; 
+    border-radius: 12px;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 1rem;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.card-header h2 { font-size: 1.25rem; color: var(--text-dark); margin: 0; }
+
+/* Summary Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.stat-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-info { display: flex; flex-direction: column; }
+.stat-label { font-size: 0.85rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+.stat-value { font-size: 1.8rem; font-weight: 700; color: var(--text-dark); margin: 0; }
+
+/* Main Analytics Grid */
+.analytics-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Badges */
+.badge { padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+.badge-primary { background-color: rgba(0, 180, 216, 0.1); color: var(--primary-blue); border: 1px solid rgba(0, 180, 216, 0.2); }
+.badge-outline { background-color: transparent; color: var(--text-light); border: 1px solid var(--border-color); }
+[data-theme="dark"] .badge-outline { color: var(--text-dark); }
+
+/* ========================================================
+   CHART CONTAINERS
+   ======================================================== */
+.chart-container {
+    position: relative;
+    height: 380px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.pie-container {
+    height: 300px;
+    margin: 0 auto;
+}
+
+.custom-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.legend-item { display: flex; align-items: center; gap: 0.5rem; }
+.legend-color { width: 12px; height: 12px; border-radius: 3px; }
+.legend-text { font-size: 0.9rem; color: var(--text-dark); font-weight: 500; }
+
+/* ========================================================
+   DESKTOP FLEX LAYOUT
+   ======================================================== */
+@media (min-width: 1024px) {
+    .analytics-grid {
+        flex-direction: row;
+    }
+    .flex-2 { flex: 2; }
+    .flex-1 { flex: 1; }
+}
+
+/* ========================================================
+   MOBILE RESPONSIVENESS (Strict Safe Padding)
+   ======================================================== */
+@media (max-width: 768px) {
+    #admin-main { padding: 1.2rem 1rem !important; }
+    #admin-top-nav { padding: 1rem 1.2rem !important; }
+    .mobile-menu-toggle { display: flex !important; }
+    .card { padding: 1.2rem !important; }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .chart-container { height: 300px; }
+    .pie-container { height: 260px; }
+    
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat-card { padding: 1.2rem; }
+}

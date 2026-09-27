@@ -1,0 +1,245 @@
+/* ========================================================
+   GLOBAL LAYOUT FIXES (Consistent with Dashboard architecture)
+   ======================================================== */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#admin-main {
+    padding: 2rem 3%; 
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#admin-top-nav {
+    padding: 1rem 3%;
+    box-sizing: border-box;
+}
+
+.card {
+    padding: 1.5rem !important; 
+    border-radius: 12px;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    overflow: hidden; 
+}
+
+.table-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 1rem;
+    width: 100%;
+}
+
+/* ========================================================
+   MOBILE MENU TOGGLE
+   ======================================================== */
+.mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #03045e !important; 
+    color: #ffffff !important;
+    border: 1px solid transparent !important;
+    padding: 0.5rem !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .mobile-menu-toggle {
+    background-color: #000414 !important; 
+    border: 1px solid rgba(255, 255, 255, 0.4) !important; 
+}
+
+/* ========================================================
+   FILTER DROPDOWNS & STATUS STYLING
+   ======================================================== */
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.custom-select {
+    padding: 0.6rem 2.5rem 0.6rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%236c757d" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    max-width: 100%;
+    transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+
+[data-theme="dark"] .custom-select {
+    background-color: var(--white);
+}
+
+.custom-select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.filter-select {
+    min-width: 200px;
+}
+
+/* Status Dropdown Variations (Color Coding) */
+.status-select {
+    font-weight: 600;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 140px;
+}
+
+.status-select[data-current="complete"] { 
+    color: var(--success-green); 
+    border-color: rgba(40, 167, 69, 0.3); 
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+.status-select[data-current="overdue"] { 
+    color: var(--danger-red); 
+    border-color: rgba(220, 53, 69, 0.3); 
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+.status-select[data-current="pending"] { 
+    color: #f39c12; 
+    border-color: rgba(243, 156, 18, 0.3); 
+    background-color: rgba(243, 156, 18, 0.05);
+}
+
+/* Dark mode select options reset */
+[data-theme="dark"] .status-select option {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+/* ========================================================
+   TABLE STYLES
+   ======================================================== */
+.table-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    border: 1px solid var(--border-color); 
+    background: transparent; 
+    display: block; 
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; 
+    min-width: 700px; 
+}
+
+.data-table th, 
+.data-table td {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+    white-space: nowrap; 
+}
+
+.data-table th {
+    background-color: rgba(0, 180, 216, 0.08); 
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tbody tr { transition: background-color 0.2s ease, opacity 0.3s ease; background-color: transparent; }
+[data-theme="light"] .data-table tbody tr:hover { background-color: rgba(0, 0, 0, 0.03); }
+[data-theme="dark"] .data-table tbody tr:hover { background-color: rgba(255, 255, 255, 0.05); }
+
+/* Task Typography */
+.task-info { display: flex; flex-direction: column; }
+.task-name { font-weight: 600; color: var(--text-dark); font-size: 1rem; }
+.task-subtext { font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem; }
+
+.date-text { color: var(--text-dark); font-weight: 500; font-size: 0.95rem; }
+.text-danger { color: var(--danger-red); font-weight: 700; }
+
+.source-tag { padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.source-tag.organic { background: rgba(40, 167, 69, 0.1); color: var(--success-green); }
+.source-tag.referral { background: rgba(144, 224, 239, 0.2); color: var(--primary-blue); }
+.source-tag.social { background: rgba(3, 4, 94, 0.1); color: var(--primary-blue); }
+
+.emp-badge {
+    background: rgba(3, 4, 94, 0.1);
+    color: var(--dark-purple);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+[data-theme="dark"] .emp-badge { color: var(--primary-blue); background: rgba(0, 180, 216, 0.15); }
+
+/* Scrollbar rules */
+.styled-scrollbar::-webkit-scrollbar { height: 6px; }
+.styled-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.styled-scrollbar::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+.styled-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
+
+/* ========================================================
+   MOBILE RESPONSIVENESS
+   ======================================================== */
+@media (max-width: 768px) {
+    #admin-main { padding: 1.2rem 1rem !important; }
+    #admin-top-nav { padding: 1rem 1.2rem !important; }
+    .mobile-menu-toggle { display: flex !important; }
+    .card { padding: 1.2rem !important; }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+    
+    .filter-group {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+    
+    .data-table th, .data-table td {
+        padding: 1rem; 
+    }
+}
