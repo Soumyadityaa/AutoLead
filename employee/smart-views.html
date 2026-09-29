@@ -7,6 +7,7 @@
     <link rel="icon" href="../img/icon.png" type="image/png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/employee/smart-views.css">
+    <link rel="stylesheet" href="../css/employee/manage-tables.css"> <!-- New styles -->
 </head>
 <body>
     <header class="top-nav" id="employee-top-nav">
@@ -36,7 +37,20 @@
         <nav class="nav-links" id="nav-links">
             <a href="dashboard.html">DASHBOARD</a>
             <a href="campaigns.html">Email Campaigns</a>
-            <a href="smart-views.html" class="active">Leads</a>
+            <!-- Replaces the static 'Leads' link in the top-nav -->
+            <div class="nav-dropdown" id="leads-nav-dropdown">
+                <button class="nav-dropbtn" id="leads-dropbtn">
+                    Leads
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="nav-dropdown-content" id="leads-dropdown-content">
+                    
+                    <a href="smart-views.html">Smart View</a>
+                    <a href="manage-lead.html">Manage leads</a>
+                    <a href="manage-activity.html">Manage Activity</a>
+                    <a href="manage-task.html">Manage Task</a>
+                </div>
+            </div>
             
             <!-- Theme Toggle Button -->
             <button id="theme-toggle" class="theme-toggle-btn nav-theme-btn" aria-label="Toggle Dark Mode">
@@ -262,5 +276,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/employee/smart-views.js"></script>
+    <script src="../js/employee/nav-dropdown.js"></script>
 </body>
 </html>
