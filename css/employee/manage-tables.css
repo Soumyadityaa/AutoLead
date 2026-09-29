@@ -1,0 +1,99 @@
+/* ========================================================
+   DROPDOWN NAVIGATION STYLES
+   ======================================================== */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropbtn {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+    padding: 0;
+    font-family: inherit;
+}
+
+.nav-dropbtn:hover, 
+.nav-dropdown-content.show ~ .nav-dropbtn {
+    color: var(--primary-blue);
+}
+
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 180px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    z-index: 2000;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 0.8rem;
+}
+
+.nav-dropdown-content.show {
+    display: flex;
+    animation: dropFade 0.2s ease;
+}
+
+@keyframes dropFade {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-dropdown-content a {
+    color: var(--text-dark);
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-dropdown-content a:hover {
+    background-color: rgba(0, 180, 216, 0.05);
+    color: var(--primary-blue);
+}
+
+/* Dark Mode Dropdown Support */
+[data-theme="dark"] .nav-dropdown-content {
+    background-color: var(--bg-light); /* Maps to dark background in dark mode */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* ========================================================
+   MANAGEMENT PAGES - SHARED TABLE LAYOUTS
+   ======================================================== */
+.management-page-header {
+    margin-bottom: 2rem;
+}
+
+.management-page-header h2 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-decoration: underline; /* Matches reference imagery */
+    text-underline-offset: 4px;
+}
+
+/* Forces mobile responsiveness for all tables */
+.table-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    border: 1px solid var(--border-color); 
+    background: transparent; 
+    display: block; 
+}

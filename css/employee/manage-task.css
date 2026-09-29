@@ -1,0 +1,154 @@
+/* ========================================================
+   MANAGE TASK - SPECIFIC STYLES
+   ======================================================== */
+
+/* Table Action Header (Search & Stats) */
+.table-action-header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 180, 216, 0.02);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.table-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.table-search svg {
+    position: absolute;
+    left: 12px;
+    color: var(--text-light);
+}
+
+.table-search input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+[data-theme="dark"] .table-search input {
+    background-color: var(--bg-light);
+    border-color: #333333;
+}
+
+.table-search input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.table-stats {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.table-stats .stat-badge {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.table-stats .stat-badge strong { color: var(--text-dark); margin-left: 0.3rem; }
+
+.table-stats .stat-warning { border-color: rgba(220, 53, 69, 0.3); background: rgba(220, 53, 69, 0.05); }
+.table-stats .stat-warning strong { color: var(--danger-red); }
+
+[data-theme="dark"] .table-stats .stat-badge { background: var(--bg-light); border-color: #333333; }
+[data-theme="dark"] .table-stats .stat-warning { background: rgba(220, 53, 69, 0.1); border-color: rgba(220, 53, 69, 0.4); }
+
+/* Task Status Dropdown Customization */
+.task-status-select {
+    font-weight: 600;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    min-width: 140px;
+    transition: all 0.2s ease;
+}
+
+.task-status-select[data-current="Completed"] { color: var(--success-green); border-color: rgba(40, 167, 69, 0.3); background-color: rgba(40, 167, 69, 0.05); }
+.task-status-select[data-current="Overdue"] { color: var(--danger-red); border-color: rgba(220, 53, 69, 0.3); background-color: rgba(220, 53, 69, 0.05); }
+.task-status-select[data-current="Pending"] { color: #f39c12; border-color: rgba(243, 156, 18, 0.3); background-color: rgba(243, 156, 18, 0.05); }
+
+/* Formating Adjustments */
+.task-id { font-family: monospace; color: var(--primary-blue); font-weight: 700; font-size: 0.95rem; }
+
+.task-info { display: flex; flex-direction: column; }
+.task-subject { font-weight: 600; color: var(--text-dark); font-size: 1rem; }
+.task-lead-ref { font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem; }
+
+.date-text { color: var(--text-dark); font-size: 0.95rem; }
+.date-text.text-danger { color: var(--danger-red); font-weight: 600; }
+
+.emp-badge { background: rgba(3, 4, 94, 0.1); color: var(--dark-purple); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700; }
+[data-theme="dark"] .emp-badge { color: var(--primary-blue); background: rgba(0, 180, 216, 0.15); }
+
+/* Reminder Badge (Pill Style) */
+.reminder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.reminder-badge.active {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-green);
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+.reminder-badge.active::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--success-green);
+}
+
+.reminder-badge.inactive {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+[data-theme="dark"] .reminder-badge.inactive { background-color: #333333; border-color: #444444; }
+
+/* ========================================================
+   BUG FIX: NATIVE DROPDOWN OPTION VISIBILITY IN DARK MODE
+   ======================================================== */
+.task-status-select option {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+[data-theme="dark"] .task-status-select option {
+    background-color: #1e1e1e !important; 
+    color: #f8f9fa !important; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-action-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .table-search {
+        max-width: 100%;
+    }
+}
