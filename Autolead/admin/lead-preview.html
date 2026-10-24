@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Preview &amp; Call Audit | AutoLead Admin</title>
+  <link rel="icon" type="image/png" href="../asset/icon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin/lead-preview.css">
+  <script src="../js/main.js"></script>
+</head>
+<body>
+
+  <!-- Persistent Admin Top Navigation -->
+  <header class="top-navbar">
+    <a href="dashboard.html" class="navbar-brand">
+      <img src="../asset/logo.png" alt="AutoLead Logo" class="brand-logo">
+      <span class="role-pill">Admin</span>
+    </a>
+
+    <nav class="navbar-menu" id="navbarMenu" aria-label="Admin Navigation">
+      <a href="dashboard.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>DASHBOARD</span>
+      </a>
+
+      <div class="nav-dropdown" id="empNavDropdown">
+        <button type="button" class="nav-link" id="empNavTrigger" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>Employee Code</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" id="empNavMenu">
+          <a href="employee-monitoring.html?employee_code=ALL" class="nav-dropdown-item">All Employees</a>
+          <a href="employee-monitoring.html?employee_code=EMP001" class="nav-dropdown-item">EMP001 - Arjun Mehta</a>
+          <a href="employee-monitoring.html?employee_code=EMP002" class="nav-dropdown-item">EMP002 - Priya Sharma</a>
+          <a href="employee-monitoring.html?employee_code=EMP003" class="nav-dropdown-item">EMP003 - Rohan Verma</a>
+        </div>
+      </div>
+
+      <a href="tasks.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"></path>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+        </svg>
+        <span>Task</span>
+      </a>
+
+      <a href="tasks.html?filter=overdue" class="nav-link nav-overdue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>Over due task</span>
+      </a>
+
+      <a href="analytics.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span>Quick View</span>
+      </a>
+
+      <a href="add-lead.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="8.5" cy="7" r="4"></circle>
+          <line x1="20" y1="8" x2="20" y2="14"></line>
+          <line x1="23" y1="11" x2="17" y2="11"></line>
+        </svg>
+        <span>Add Lead</span>
+      </a>
+    </nav>
+
+    <div class="navbar-actions">
+      <span class="user-badge">ADMIN01</span>
+      <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle theme"></button>
+      <button type="button" class="icon-btn js-logout" id="logoutBtn" title="Sign Out" aria-label="Sign Out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </button>
+      <button type="button" class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="page-header">
+      <div class="page-title-group">
+        <h1>Granular Prospect Profile &amp; Audit Trail</h1>
+        <p>Inspect complete demographic records, log manual interactions, and audit recorded voice calls</p>
+      </div>
+
+      <div class="lead-switcher-bar">
+        <label for="leadSelectorDropdown" class="form-label">Select Prospect:</label>
+        <select id="leadSelectorDropdown" class="form-select"></select>
+      </div>
+    </div>
+
+    <!-- Upper Split: Prospect Demographic Snapshot + Quick Interaction Logger -->
+    <section class="lead-preview-grid">
+      <!-- Demographic Profile Card -->
+      <div class="card profile-detail-card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span id="previewLeadName">Loading Prospect...</span>
+          </h2>
+          <span id="previewStageBadge" class="badge badge-info">Stage</span>
+        </div>
+
+        <div class="demographic-grid">
+          <div class="demo-field">
+            <span class="demo-label">Prospect Name</span>
+            <strong class="demo-value" id="fieldName">-</strong>
+          </div>
+          <div class="demo-field">
+            <span class="demo-label">Age</span>
+            <strong class="demo-value" id="fieldAge">-</strong>
+          </div>
+          <div class="demo-field">
+            <span class="demo-label">Gender</span>
+            <strong class="demo-value" id="fieldGender">-</strong>
+          </div>
+          <div class="demo-field">
+            <span class="demo-label">Email Address</span>
+            <strong class="demo-value" id="fieldEmail">-</strong>
+          </div>
+          <div class="demo-field">
+            <span class="demo-label">Mobile No.</span>
+            <strong class="demo-value" id="fieldPhone">-</strong>
+          </div>
+          <div class="demo-field">
+            <span class="demo-label">Lead Score</span>
+            <div><span id="fieldScore" class="badge score-high">0 / 100</span></div>
+          </div>
+          <div class="demo-field">
+            <span class="demo-label">Lead Owner</span>
+            <strong class="demo-value" id="fieldOwner">-</strong>
+          </div>
+          <div class="demo-field">
+            <span class="demo-label">Acquisition Source</span>
+            <strong class="demo-value" id="fieldSource">-</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manual Interaction & Task Quick Logger -->
+      <div class="card quick-logger-card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+            <span>Quick-Log Call, Email, or Task</span>
+          </h2>
+        </div>
+
+        <form id="quickInteractionForm" class="quick-log-form">
+          <input type="hidden" id="quickLeadId" value="">
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="quickInteractionType" class="form-label">Interaction Type</label>
+              <select id="quickInteractionType" class="form-select" required>
+                <option value="Outbound Call">Outbound Call</option>
+                <option value="Inbound Call">Inbound Call</option>
+                <option value="Email Sent">Email Sent</option>
+                <option value="Task">Assign Follow-up Task</option>
+                <option value="Note">Audit Note</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="callDurationGroup">
+              <label for="quickCallDuration" class="form-label">Call Duration (MM:SS)</label>
+              <input type="text" id="quickCallDuration" class="form-control" value="04:30" placeholder="04:30">
+            </div>
+
+            <div class="form-group hidden-field" id="taskDueDateGroup">
+              <label for="quickTaskDueDate" class="form-label">Task Due Date</label>
+              <input type="date" id="quickTaskDueDate" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="quickInteractionNotes" class="form-label">Summary Notes / Task Subject</label>
+            <textarea
+              id="quickInteractionNotes"
+              class="form-control"
+              rows="3"
+              placeholder="Enter call transcript notes, email summary, or task instructions..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" id="quickLogSubmitBtn" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Record Interaction</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Interaction Audit Trail Table -->
+    <section class="card audit-trail-card">
+      <div class="card-header">
+        <h2 class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          <span>Chronological Interaction Audit Trail</span>
+        </h2>
+        <span class="badge badge-neutral" id="interactionCountBadge">0 Logs</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Mail Sent</th>
+              <th>Inbound Call</th>
+              <th>Outbound Call</th>
+              <th>Audit Notes &amp; Context</th>
+              <th>Call Record URL</th>
+            </tr>
+          </thead>
+          <tbody id="interactionHistoryBody">
+            <tr>
+              <td colspan="7" class="empty-state">Loading audit history...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scroll-Locked Custom Audio Player Modal with Synchronized CSS Waveform -->
+  <div class="modal-overlay" id="audioPlayerModal" role="dialog" aria-modal="true" aria-labelledby="audioModalTitle">
+    <div class="modal-card audio-modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="audioModalTitle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="23"></line>
+            <line x1="8" y1="23" x2="16" y2="23"></line>
+          </svg>
+          <span>Recorded Call Audit Player</span>
+        </h3>
+        <button type="button" class="icon-btn" id="closeAudioModalBtn" data-close-modal="audioPlayerModal" aria-label="Close Audio Player">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="audio-meta-box">
+          <div>
+            <span class="audio-meta-label">Prospect:</span>
+            <strong id="audioProspectName">-</strong>
+          </div>
+          <div>
+            <span class="audio-meta-label">Recording File:</span>
+            <code id="audioFileUrl">records/call_001.mp3</code>
+          </div>
+        </div>
+
+        <!-- Staggered CSS Keyframe Audio Waveform Visualizer -->
+        <div class="waveform-visualizer" id="waveformContainer" aria-hidden="true">
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+        </div>
+
+        <div class="audio-controls-row">
+          <button type="button" class="btn btn-primary" id="audioPlayPauseBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Play Recording</span>
+          </button>
+
+          <div class="audio-progress-track" id="audioProgressTrack">
+            <div class="audio-progress-fill" id="audioProgressFill"></div>
+          </div>
+
+          <span class="audio-timer" id="audioTimerDisplay">00:00 / 04:18</span>
+        </div>
+
+        <p class="audio-transcript-note" id="audioTranscriptText"></p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close-modal="audioPlayerModal">Close Player</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/admin/lead-preview.js"></script>
+</body>
+</html>
