@@ -1,5 +1,5 @@
-# AutoLead - Dual-Panel Lead Monitoring and Management Web Application
-
+# AutoLead - Dual-Panel Lead Monitoring and Management Web Application 
+![Alt Text](asset/logo.png)
 AutoLead is a full-stack, dual-panel Customer Relationship Management (CRM) and lead monitoring web application engineered to run on an Apache, MySQL, and PHP (XAMPP) stack. The platform provides a unified operational loop between an executive **Admin Panel** (macro-level pipeline oversight, lead ingestion, task intervention, credential provisioning, and business intelligence) and a personalized **Employee Panel** (daily workspace queues, 5-tab Smart Views, pipeline stage progression, interaction logging, and email campaign telemetry).
 
 Built strictly with framework-free Vanilla HTML5, CSS3, ES6+ JavaScript, raw PHP (PDO), and MySQL, AutoLead enforces a high-contrast, zero-CLS user interface using inline vector SVG iconography, a persistent Dark/Light theme engine, and transactional database synchronization.
