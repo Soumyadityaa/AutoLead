@@ -1,0 +1,64 @@
+/* ============================================================================
+   Admin Add Lead Form Stylesheet
+   Path: C:/xampp/htdocs/autolead/css/admin/add-lead.css
+   ============================================================================ */
+
+.add-lead-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.add-lead-card {
+  padding: 1.75rem;
+}
+
+.add-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field-error {
+  font-size: 0.76rem;
+  color: var(--color-danger);
+  min-height: 1rem;
+}
+
+.form-control.input-invalid,
+.form-select.input-invalid {
+  border-color: var(--color-danger);
+}
+
+.form-feedback-banner {
+  display: none;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 1.15rem;
+}
+
+.form-feedback-banner.visible {
+  display: block;
+}
+
+.form-feedback-banner.banner-success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.form-feedback-banner.banner-error {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.form-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}

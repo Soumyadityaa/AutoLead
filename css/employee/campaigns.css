@@ -1,0 +1,84 @@
+/* ============================================================================
+   Employee Email Campaigns Monitor Stylesheet (Mobile-Hardened)
+   Path: D:/xampp/htdocs/Autolead/css/employee/campaigns.css
+   ============================================================================ */
+
+.campaign-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.campaign-filter-bar .form-select {
+  width: auto;
+  min-width: 175px;
+}
+
+/* Dual Animated Open % and Click % Progress Bars */
+.delivery-report-cell {
+  min-width: 220px;
+}
+
+.dual-progress-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progress-metric-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.progress-label-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.progress-track {
+  width: 100%;
+  height: 7px;
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: var(--radius-pill);
+  transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.progress-fill.fill-open {
+  background: linear-gradient(90deg, var(--brand-primary), #38bdf8);
+}
+
+.progress-fill.fill-click {
+  background: linear-gradient(90deg, var(--brand-secondary), var(--color-success));
+}
+
+.recipients-pill {
+  font-weight: 700;
+  font-size: 0.84rem;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .campaign-filter-bar {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .campaign-filter-bar .form-select {
+    flex: 1;
+    min-width: 0;
+  }
+}

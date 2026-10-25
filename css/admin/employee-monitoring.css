@@ -1,0 +1,98 @@
+/* ============================================================================
+   Admin Employee Monitoring Stylesheet
+   Path: C:/xampp/htdocs/autolead/css/admin/employee-monitoring.css
+   ============================================================================ */
+
+.monitoring-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.monitoring-controls .filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.monitoring-controls .form-select {
+  min-width: 230px;
+}
+
+.monitoring-controls .form-control {
+  min-width: 240px;
+}
+
+.lead-link {
+  font-weight: 700;
+  color: var(--brand-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lead-link:hover {
+  text-decoration: underline;
+}
+
+.audit-note-cell {
+  max-width: 240px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.activity-select {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 1.8rem 0.35rem 0.6rem;
+  min-width: 115px;
+}
+
+.activity-select.status-Active {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.activity-select.status-Checked {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.activity-select.status-Pending {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.activity-select.status-Inactive {
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+.override-btn-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.btn-send-override {
+  background-color: var(--brand-primary-soft);
+  color: var(--brand-primary);
+  border: 1px solid rgba(29, 169, 232, 0.35);
+}
+
+.btn-send-override:hover:not(:disabled) {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .monitoring-controls {
+    width: 100%;
+  }
+  .monitoring-controls .form-select,
+  .monitoring-controls .form-control {
+    width: 100%;
+  }
+}

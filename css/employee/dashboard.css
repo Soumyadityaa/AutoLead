@@ -1,0 +1,160 @@
+/* ============================================================================
+   Employee Dashboard ("My Workspace") Stylesheet (Mobile-Hardened)
+   Path: D:/xampp/htdocs/Autolead/css/employee/dashboard.css
+   ============================================================================ */
+
+.workspace-hero-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-alt) 100%);
+  border-left: 4px solid var(--brand-primary);
+  width: 100%;
+  min-width: 0;
+}
+
+.workspace-hero-info {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.workspace-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-primary);
+  margin-bottom: 0.25rem;
+}
+
+.workspace-hero-info h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  word-wrap: break-word;
+}
+
+.workspace-hero-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  max-width: 620px;
+}
+
+.complete-task-control-box {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.active-lead-target {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.active-lead-target .form-select {
+  min-width: 220px;
+  font-weight: 600;
+}
+
+/* Prominent COMPLETE TASK Action Button */
+.btn-complete-task {
+  background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.68rem 1.35rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.32);
+  border: none;
+}
+
+.btn-complete-task:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-1px);
+}
+
+/* Upper Grid: 4-Week Growth Chart + My Lead Funnel */
+.workspace-upper-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.emp-chart-container {
+  position: relative;
+  height: 265px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.compact-table-scroll {
+  max-height: 265px;
+  overflow-y: auto;
+}
+
+/* Lower 3-Column Segmented Queues */
+.workspace-queues-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.overdue-queue-card {
+  border-top: 3px solid var(--color-danger);
+}
+
+.overdue-card-title {
+  color: var(--color-danger);
+}
+
+.overdue-card-title svg {
+  color: var(--color-danger);
+}
+
+@media (max-width: 1100px) {
+  .workspace-upper-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .workspace-queues-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .workspace-hero-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .complete-task-control-box {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .active-lead-target,
+  .active-lead-target .form-select,
+  .btn-complete-task {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .emp-chart-container {
+    height: 225px;
+  }
+}
