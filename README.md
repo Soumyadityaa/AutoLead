@@ -37,6 +37,8 @@ Built strictly with framework-free Vanilla HTML5, CSS3, ES6+ JavaScript, raw PHP
 ## 2. Core Features Breakdown
 
 ### 2.1 Admin Panel Core Features
+![Project Screenshot](asset/admin_panel.png)
+
 
 The Admin Panel serves as the central command authority for pipeline distribution, employee auditing, deadline enforcement, and executive analytics:
 
@@ -76,7 +78,7 @@ The Admin Panel serves as the central command authority for pipeline distributio
 ---
 
 ### 2.2 Employee Panel Core Features
-
+![Project Screenshot](asset/employee_panel.png)
 The Employee Panel is a focused execution workspace scoped strictly to the authenticated employee's `employee_code`:
 
 1. **Personalized "My Workspace" Hub (`employee/dashboard.html`)**:
